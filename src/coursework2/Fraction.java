@@ -58,16 +58,14 @@ public class Fraction {
         result = 31 * result + denominator;
         return result;
     }
+    
+    public Fraction add(Fraction other) {
+    	int num = (this.getNumerator() * other.getDenominator()) + (this.getDenominator() * other.getNumerator());
+    	int denom = this.getDenominator() * other.getDenominator();
+    	return new Fraction(num, denom);
+    }
 
     public Fraction multiply(Fraction other) {
-
-        int num = this.getNumerator() * other.getNumerator();
-        int denom = this.getDenominator() * other.getDenominator();
-        return new Fraction(num, denom);
-    }
-    
-    //method created by JB
-    public Fraction add(Fraction other) {
 
         int num = this.getNumerator() * other.getNumerator();
         int denom = this.getDenominator() * other.getDenominator();
