@@ -45,6 +45,20 @@ public class FractionTest {
 		if (!s.equals(t.absValue()))
 			System.out.println("Values are not the same");
 		
+		// test negate
+		Fraction u = new Fraction(1,2);
+		System.out.print(u);
+		System.out.println(" == " + u.negate());
+		Fraction w = new Fraction(-1,2);
+		System.out.print(w);
+		System.out.println(" == " + w.negate());
+		Fraction x = new Fraction(1,-2);
+		System.out.print(x);
+		System.out.println(" == " + x.negate());
+		Fraction y = new Fraction(-1,-2);
+		System.out.print(y);
+		System.out.println(" == " + y.negate());
+		
 		// test equals
 		test(new Fraction(1, 2), new Fraction(1, 2), "error test 1");
 		test(new Fraction(1, 2), new Fraction(3, 6), "error test 2");
