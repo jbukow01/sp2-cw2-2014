@@ -11,13 +11,6 @@ public class FractionTest {
 		// test divide by zero - should print an error and exit
 		new Fraction(1, 2);
 		
-		// test multiply
-		Fraction f = new Fraction(3, 10);
-		Fraction g = new Fraction(1, 2);
-		Fraction h = new Fraction(3, 5);
-		if (!f.equals(g.multiply(h)))
-			System.out.println("Multiply failed");
-		
 		// test addition
 		Fraction a = new Fraction(1, 2);
 		Fraction b = new Fraction(4, 16);
@@ -31,6 +24,20 @@ public class FractionTest {
 		Fraction o = new Fraction(2,16);
 		if (!m.equals(n.subtract(o)))
 			System.out.println("Subtraction failed");
+		
+		// test multiply
+		Fraction f = new Fraction(3, 10);
+		Fraction g = new Fraction(1, 2);
+		Fraction h = new Fraction(3, 5);
+		if (!f.equals(g.multiply(h)))
+			System.out.println("Multiply failed");
+		
+		// test division
+		Fraction p = new Fraction(5,16);
+		Fraction q = new Fraction(1,8);
+		Fraction r = new Fraction(2,5);
+		if (!p.equals(q.divide(r)))
+			System.out.println("Division failed");
 		
 		// test equals
 		test(new Fraction(1, 2), new Fraction(1, 2), "error test 1");
