@@ -39,6 +39,12 @@ public class FractionTest {
 		if (!p.equals(q.divide(r)))
 			System.out.println("Division failed");
 		
+		// test absolute value
+		Fraction s = new Fraction(1,2);
+		Fraction t = new Fraction(-1,2);
+		if (!s.equals(t.absValue()))
+			System.out.println("Values are not the same");
+		
 		// test equals
 		test(new Fraction(1, 2), new Fraction(1, 2), "error test 1");
 		test(new Fraction(1, 2), new Fraction(3, 6), "error test 2");

@@ -87,6 +87,18 @@ public class Fraction {
 		int denom = this.getDenominator() * other.getNumerator();
 		return new Fraction(num, denom);
 	}
+	
+	public Fraction absValue() {
+		int num = this.getNumerator();
+		int denom = this.getDenominator();
+		if (num < 0) {
+			num *= -1;
+		}
+		if (denom < 0) {
+			denom *= -1;
+		}
+		return new Fraction(num, denom);
+	}
 
 	private int myGcd(int a, int b) {
 		while (b != 0) {
