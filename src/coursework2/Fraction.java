@@ -20,7 +20,12 @@ public class Fraction {
 
 	@Override
 	public String toString() {
-		return "" + getNumerator() + '/' + getDenominator();
+		if (getDenominator() == 1) {
+			return "" + getNumerator();
+		}
+		else {
+			return "" + getNumerator() + '/' + getDenominator();
+		}
 	}
 
 	public int getNumerator() {
@@ -63,12 +68,14 @@ public class Fraction {
 		return result;
 	}
 
+	// created by JB
 	public Fraction add(Fraction other) {
 		int num = (this.getNumerator() * other.getDenominator()) + (this.getDenominator() * other.getNumerator());
 		int denom = this.getDenominator() * other.getDenominator();
 		return new Fraction(num, denom);
 	}
-	
+
+	// created by JB
 	public Fraction subtract(Fraction other) {
 		int num = (this.getNumerator() * other.getDenominator()) - (this.getDenominator() * other.getNumerator());
 		int denum = this.getDenominator() * other.getDenominator();
@@ -82,12 +89,14 @@ public class Fraction {
 		return new Fraction(num, denom);
 	}
 	
+	// created by JB
 	public Fraction divide(Fraction other) {
 		int num = this.getNumerator() * other.getDenominator();
 		int denom = this.getDenominator() * other.getNumerator();
 		return new Fraction(num, denom);
 	}
 	
+	// created by JB
 	public Fraction absValue() {
 		int num = this.getNumerator();
 		int denom = this.getDenominator();
@@ -100,6 +109,7 @@ public class Fraction {
 		return new Fraction(num, denom);
 	}
 	
+	// created by JB
 	public Fraction negate() {
 		int num = this.getNumerator() * -1;
 		int denom = this.getDenominator();

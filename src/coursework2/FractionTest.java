@@ -11,14 +11,14 @@ public class FractionTest {
 		// test divide by zero - should print an error and exit
 		new Fraction(1, 2);
 		
-		// test addition
+		// test addition JB
 		Fraction a = new Fraction(1, 2);
 		Fraction b = new Fraction(4, 16);
 		Fraction c = new Fraction(3, 12);
 		if (!a.equals(b.add(c)))
 			System.out.println("Addition failed");
 		
-		// test subtraction
+		// test subtraction JB
 		Fraction m = new Fraction(1,8);
 		Fraction n = new Fraction(5,20);
 		Fraction o = new Fraction(2,16);
@@ -32,32 +32,38 @@ public class FractionTest {
 		if (!f.equals(g.multiply(h)))
 			System.out.println("Multiply failed");
 		
-		// test division
+		// test division JB
 		Fraction p = new Fraction(5,16);
 		Fraction q = new Fraction(1,8);
 		Fraction r = new Fraction(2,5);
 		if (!p.equals(q.divide(r)))
 			System.out.println("Division failed");
 		
-		// test absolute value
+		// test absolute value JB
 		Fraction s = new Fraction(1,2);
 		Fraction t = new Fraction(-1,2);
 		if (!s.equals(t.absValue()))
 			System.out.println("Values are not the same");
 		
-		// test negate
+		// test negate JB
 		Fraction u = new Fraction(1,2);
-		System.out.print(u);
-		System.out.println(" == " + u.negate());
+		if (u.equals(u.negate()))
+			System.out.println("Negation failed");
 		Fraction w = new Fraction(-1,2);
-		System.out.print(w);
-		System.out.println(" == " + w.negate());
+		if (w.equals(w.negate()))
+			System.out.println("Negation failed");
 		Fraction x = new Fraction(1,-2);
-		System.out.print(x);
-		System.out.println(" == " + x.negate());
+		if (x.equals(x.negate()))
+			System.out.println("Negation failed");
 		Fraction y = new Fraction(-1,-2);
-		System.out.print(y);
-		System.out.println(" == " + y.negate());
+		if (y.equals(y.negate()))
+			System.out.println("Negation failed");
+		
+		// test toString
+		Fraction ts1 = new Fraction(4,8);
+		System.out.println(ts1);
+		Fraction ts2 = new Fraction(4,2);
+		System.out.println(ts2);
 		
 		// test equals
 		test(new Fraction(1, 2), new Fraction(1, 2), "error test 1");
