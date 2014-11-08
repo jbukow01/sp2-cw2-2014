@@ -1,4 +1,4 @@
-package myPackage;
+package coursework2;
 
 /**
  * Created by keith for the second coursework assignment.
