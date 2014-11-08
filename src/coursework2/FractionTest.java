@@ -60,10 +60,12 @@ public class FractionTest {
 			System.out.println("Negation failed");
 		
 		// test toString
-		Fraction ts1 = new Fraction(4,8);
-		System.out.println(ts1);
-		Fraction ts2 = new Fraction(4,2);
-		System.out.println(ts2);
+		Fraction ts = new Fraction(4,1);
+		String s1 = "" + ts;
+		String s2 = "4";
+		if (!s1.equals(s2)) {
+			System.out.println("Fractions are not the same");
+		}
 		
 		// test equals
 		test(new Fraction(1, 2), new Fraction(1, 2), "error test 1");
