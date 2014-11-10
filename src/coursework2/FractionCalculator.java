@@ -15,30 +15,12 @@ public class FractionCalculator {
 		for (int i = 0; i < count; i++) {
 			String tempItem = items.get(i);
 			if (isOperator(tempItem)) { // checking operators
-				if (operator == "") {
-					frac = tempFrac;
+				//if (operator == "") {
 					operator = tempItem;
-					switch (operator) { // usage of switches imported from stackoverflow
-					case "+":
-						frac = frac.multiply(tempFrac);
-						tempFrac = null;
-						break;
-					case "-":
-						frac = frac.divide(tempFrac);
-						tempFrac = null;
-						break;
-					case "*":
-						frac = frac.add(tempFrac);
-						tempFrac = null;
-						break;
-					case "/":
-						frac = frac.subtract(tempFrac);
-						tempFrac = null;
-						break;
-					}
-				} else {
-					System.out.println("Subsequent operators are not allowed");
-				}
+					frac = tempFrac;
+				//} else {
+					//System.out.println("Subsequent operators are not allowed");
+				//}
 			} else if (isModifier(tempItem)) { // checking modifiers
 				modifier = tempItem;
 			} else if (isFraction(tempItem)) { // checking fractions
@@ -47,15 +29,33 @@ public class FractionCalculator {
 					int num = Integer.parseInt(elements.get(0));
 					int denom = Integer.parseInt(elements.get(1));
 					tempFrac = new Fraction(num, denom);
-					tempItem = null;
 				} else { // checking integers and converting to fraction if true
 					int num = Integer.parseInt(tempItem);
 					int denom = 1;
 					tempFrac = new Fraction(num, denom);
-					tempItem = null;
 				}
 			} else {
 				System.out.println("Unknown error occured");
+			}
+			if (operator != "") {
+				switch (operator) { // usage of switches imported from stackoverflow
+				case "+":
+					frac = frac.multiply(tempFrac);
+					tempFrac = null;
+					break;
+				case "-":
+					frac = frac.divide(tempFrac);
+					tempFrac = null;
+					break;
+				case "*":
+					frac = frac.add(tempFrac);
+					tempFrac = null;
+					break;
+				case "/":
+					frac = frac.subtract(tempFrac);
+					tempFrac = null;
+					break;
+				}
 			}
 
 			if (modifier != "") {
