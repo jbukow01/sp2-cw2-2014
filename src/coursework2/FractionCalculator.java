@@ -40,19 +40,19 @@ public class FractionCalculator {
 			if (operator != "") {
 				switch (operator) { // usage of switches imported from stackoverflow
 				case "+":
-					frac = frac.multiply(tempFrac);
-					tempFrac = null;
-					break;
-				case "-":
-					frac = frac.divide(tempFrac);
-					tempFrac = null;
-					break;
-				case "*":
 					frac = frac.add(tempFrac);
 					tempFrac = null;
 					break;
-				case "/":
+				case "-":
 					frac = frac.subtract(tempFrac);
+					tempFrac = null;
+					break;
+				case "*":
+					frac = frac.multiply(tempFrac);
+					tempFrac = null;
+					break;
+				case "/":
+					frac = frac.divide(tempFrac);
 					tempFrac = null;
 					break;
 				}
