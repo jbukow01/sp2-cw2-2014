@@ -19,19 +19,19 @@ public class FractionCalculator {
 					frac = tempFrac;
 					operator = tempItem;
 					switch (operator) { // usage of switches imported from stackoverflow
-					case "*":
+					case "+":
 						frac = frac.multiply(tempFrac);
 						tempFrac = null;
 						break;
-					case "/":
+					case "-":
 						frac = frac.divide(tempFrac);
 						tempFrac = null;
 						break;
-					case "+":
+					case "*":
 						frac = frac.add(tempFrac);
 						tempFrac = null;
 						break;
-					case "-":
+					case "/":
 						frac = frac.subtract(tempFrac);
 						tempFrac = null;
 						break;
@@ -125,8 +125,7 @@ public class FractionCalculator {
 	}
 
 	public static boolean isModifier(String modifier) { // validation for modifiers
-		String[] modifiers = { "a", "A", "abs", "n", "N", "neg", "c", "C",
-				"clear", "q", "Q", "quit" };
+		String[] modifiers = { "a", "A", "abs", "n", "N", "neg", "c", "C", "clear", "q", "Q", "quit" };
 		return Arrays.asList(modifiers).contains(modifier);
 	}
 
