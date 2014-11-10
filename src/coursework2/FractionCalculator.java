@@ -111,10 +111,6 @@ public class FractionCalculator {
 				}
 				modifier = "";
 			}
-
-			else if (operator == "") {
-				frac = tempFrac;
-			}
 		}
 		return frac;
 	}
